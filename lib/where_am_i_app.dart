@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+import 'helpers.dart';
 
 class WhereAmIApp extends StatelessWidget {
   const WhereAmIApp({super.key});
+
+  void _onGetCurrentCityLocation() async {
+    final Position position = await determinePosition();
+    print('position $position');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +27,7 @@ class WhereAmIApp extends StatelessWidget {
               ElevatedButton.icon(
                 icon: const Icon(Icons.place),
                 label: const Text('Get City Location'),
-                onPressed: () {},
+                onPressed: _onGetCurrentCityLocation,
               ),
             ],
           ),
