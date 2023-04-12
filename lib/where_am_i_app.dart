@@ -8,9 +8,21 @@ class WhereAmIApp extends StatelessWidget {
     return MaterialApp(
       title: 'Where Am I',
       theme: ThemeData.dark(),
-      home: const Scaffold(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Where Am I?'),
+        ),
         body: Center(
-          child: Text('WHERE AM I APP'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton.icon(
+                icon: const Icon(Icons.place),
+                label: const Text('Get City Location'),
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
